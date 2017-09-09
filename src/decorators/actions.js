@@ -20,11 +20,12 @@ const action = (method) => {
 
       const controller = target.name.substr(0, target.name.length - 10);
       const action = rule || name;
-      const url = path.resolve(`/${controller}/${action}`).toLowerCase();
+      let url = path.resolve(`/${controller}/${action}`).toLowerCase();
+      url = path.relative('/', url);
       console.warn(method, target.name, controller, action, url)
 
 
-      router[method](`${url}/`, async (ctx) => {
+      router[method](`/${url}/`, async (ctx) => {
         const params = { ...ctx.query, ...ctx.params, ...ctx.request.body };
         const result = await target[name](params, ctx);
         ctx.body = ctx.body || result || {};

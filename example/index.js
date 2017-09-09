@@ -6,7 +6,7 @@ import bodyParser from 'koa-bodyparser';
 import convert from 'koa-convert';
 import cors from 'koa-cors';
 
-import Controller from '../';
+import Controller from '../src';
 import A from './controllers/AController';
 
 const controller = Controller({

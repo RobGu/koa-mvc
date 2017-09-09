@@ -1,4 +1,4 @@
-import { del, get, post, put, service } from '../..';
+import { del, get, post, put, service } from '../../src';
 
 @service
 export default class BController {
