@@ -49,7 +49,6 @@ var methods = function methods(type) {
       var action = rule || name;
       var url = ('/' + controller + '/' + action + '/').toLowerCase();
       url = url.replace('//', '/');
-      console.warn(type, target.name, controller, action, url);
 
       router[type](url, function () {
         var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(ctx) {
@@ -65,7 +64,7 @@ var methods = function methods(type) {
                 case 3:
                   result = _context.sent;
 
-                  ctx.body = ctx.body || result || {};
+                  ctx.body = ctx.body || result;
 
                 case 5:
                 case 'end':

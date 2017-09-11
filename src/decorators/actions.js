@@ -22,13 +22,12 @@ const methods = (type) => {
       const action = rule || name;
       let url = `/${controller}/${action}/`.toLowerCase();
       url = url.replace('//', '/');
-      console.warn(type, target.name, controller, action, url);
 
 
       router[type](url, async (ctx) => {
         const params = { ...ctx.query, ...ctx.params, ...ctx.request.body };
         const result = await target[name](params, ctx);
-        ctx.body = ctx.body || result || {};
+        ctx.body = ctx.body || result;
       });
 
       return descriptor;
