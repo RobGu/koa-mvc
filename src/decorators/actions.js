@@ -21,7 +21,7 @@ const methods = (type) => {
       const controller = target.name.substr(0, target.name.length - 10);
       const action = rule || name;
       let url = `/${controller}/${action}/`.toLowerCase();
-      url = url.replace(/\/\//g, '/');
+      url = url.replace(/\/+/g, '/');
 
       router[type](url, async (ctx) => {
         const params = { ...ctx.query, ...ctx.params, ...ctx.request.body };
