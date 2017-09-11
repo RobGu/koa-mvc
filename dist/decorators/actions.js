@@ -48,7 +48,7 @@ var methods = function methods(type) {
       var controller = target.name.substr(0, target.name.length - 10);
       var action = rule || name;
       var url = ('/' + controller + '/' + action + '/').toLowerCase();
-      url = url.replace('//', '/');
+      url = url.replace(/\/\//g, '/');
 
       router[type](url, function () {
         var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(ctx) {
