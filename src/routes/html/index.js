@@ -1,4 +1,6 @@
-const router = require('koa-router')()
+import Router from 'koa-router'
+
+const router = Router()
 
 // html router
 router.get('/', async (ctx, next) => {
@@ -17,4 +19,4 @@ router.get('/json', async (ctx, next) => {
   }
 })
 
-module.exports = router
+export default router

@@ -1,8 +1,6 @@
-"use strict";
+import React from 'react';
 
-var React = require('react');
-
-class User extends React.Component {
+export default class User extends React.Component {
   render() {
     return (
       <div>
@@ -11,5 +9,3 @@ class User extends React.Component {
     );
   }
 };
-
-module.exports = User;
